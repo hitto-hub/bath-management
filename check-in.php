@@ -11,13 +11,14 @@
 <body>
     <h1>セッションの値の生成</h1>
     <?php
-        session_start(); //
+        session_start();
         echo "<p>セッションID:" . session_id() . "</p>";
         echo "<p>設定した値:{$_SESSION["data"]}</p>";
         print_r($_SESSION);
         echo "<br>";
     ?>
     <a href="./index.php">indexへもどる</a>
+    <br>
     <a href="./reset.php">リセットボタン</a>
 </body>
 

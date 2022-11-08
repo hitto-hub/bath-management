@@ -12,11 +12,11 @@
     <h1>セッションの値の生成</h1>
     <?php
     session_start(); // セッションスタート
-    if (!(empty($_POST["name"]))) {
+    if (!(empty($_POST["name"]))) { // <- emptyは $_POST["name"] = "" のときもtrueを返すので POST：Array ( ) の時だけtrueを返すように別のに変更する、
         // $_POST["name"]に何か入ったとき
         echo '$_POST["name"]に何かあったので$_SESSION["data"]に代入しました<br>';
         $_SESSION["data"] = $_POST["name"];
-        array_pop($_POST);
+        array_pop($_POST); // <-nullにする関数に変更する
     }
     if (empty($_SESSION["data"])) {
         // $_SESSION["data"]が空の時実行
@@ -28,13 +28,13 @@
         </form>
         DATA;
     } else {
-        // echo <<<DATA
-        // <br>
-        // <a href=./check-in.php>./check-in.phpへ</a>
-        // DATA;
+        echo <<<DATA
+        <br>
+        <a href=./check-in.php>./check-in.phpへ</a>
+        DATA;
 
-        header('Location: ./check-in.php');
-        exit;
+        // header('Location: ./check-in.php');
+        // exit;
     }
     echo "<br>";
     echo 'session id：' . session_id();
