@@ -11,10 +11,10 @@
 <body>
     <h1>セッションの値の生成</h1>
     <?php
-    session_start();
-    session_destroy();
-    header('Location: ./index.php');
-    exit;
+        session_start();
+        session_destroy();
+        header('Location: ./index.php');
+        exit;
     ?>
     <a href="./index.php">indexへもどる</a>
 </body>
