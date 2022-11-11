@@ -29,4 +29,7 @@
         echo "データベース接続失敗<br>";
         echo $e->getMessage();
     }
+    echo <<<date
+    <a href="./show.php">show</a>
+    date;
 ?>
