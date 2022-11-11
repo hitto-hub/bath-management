@@ -9,7 +9,6 @@
         $name = $_SESSION["data"];
         $time = date('Y-m-d H:i:s');
         // (2) SQLクエリ作成
-        // UPDATE school.student SET name="山口太郎" WHERE id = 1001;
         $stmt = $db->prepare("UPDATE member SET name=?, time=? WHERE id = ?;");
         $stmt->bindParam(1, $name, PDO::PARAM_STR);
         $stmt->bindParam(2, $time, PDO::PARAM_STR);
