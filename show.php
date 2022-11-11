@@ -11,8 +11,8 @@
             $all = $stmt->fetchAll();
             foreach($all as $loop){
                 // (5) 結果を表示
-                echo "id&nbsp;=&nbsp;".$loop["id"];
-                echo "&nbsp;name&nbsp;=&nbsp;".$loop["name"];
+                echo "id&nbsp;=&nbsp;".$loop["id"]."&nbsp;&nbsp;&nbsp;";
+                echo "&nbsp;name&nbsp;=&nbsp;".$loop["name"]."&nbsp;&nbsp;&nbsp;";
                 echo "&nbsp;time&nbsp;=&nbsp;".$loop["time"]."<br>";
             }
         }
