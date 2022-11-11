@@ -14,7 +14,7 @@
         echo <<<date
             <br>
             <a href="./update.php">update</a>
-            date;
+        date;
         // header('Location: ./update.php');
         // exit;
     }

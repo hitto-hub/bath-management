@@ -9,6 +9,7 @@
     $session_len = strlen($_SESSION["data"]); // $_SESSION["data"] の文字数を$session_lenに代入
     if (empty($_SESSION["data"])) {
         // $_SESSION["data"]が空の時実行
+        // リダイレクト処理
         echo <<<date
         <br>
         <a href="./input.php">input</a>
