@@ -1,15 +1,22 @@
 <?php
+    require_once 'conf.php';  // confファイル読み込み
+    // confファイルからデータ取り出す
+    $dbname = conf("dbname");
+    $dbhost = conf("dbhost");
+    $dbusername = conf("dbusername");
+    $dbpassword = conf("dbpassword");
+    $dbtable = conf("dbtable");
     session_start(); // セッションスタート
     // データ挿入処理
     try{
         // (1)接続
-        $db = new PDO('mysql:host=localhost;dbname=bath_data_base', 'root', 'Abc445566@');
+        $db = new PDO("mysql:host=$dbhost;dbname=$dbname", "$dbusername", "$dbpassword");
         // (2) 挿入するデータを作成
         $id = session_id();
         $name = $_SESSION["data"];
         $time = date('Y-m-d H:i:s');
         // (2) SQLクエリ作成
-        $stmt = $db->prepare("UPDATE member SET name=?, time=? WHERE id = ?;");
+        $stmt = $db->prepare("UPDATE $dbtable SET name=?, time=? WHERE id = ?;");
         $stmt->bindParam(1, $name, PDO::PARAM_STR);
         $stmt->bindParam(2, $time, PDO::PARAM_STR);
         $stmt->bindParam(3, $id, PDO::PARAM_STR);

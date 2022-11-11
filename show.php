@@ -1,13 +1,20 @@
 <?php
+    require_once 'conf.php';  // confファイル読み込み
+    // confファイルからデータ取り出す
+    $dbname = conf("dbname");
+    $dbhost = conf("dbhost");
+    $dbusername = conf("dbusername");
+    $dbpassword = conf("dbpassword");
+    $dbtable = conf("dbtable");
     echo <<<date
     <p>今日入った人</p>
     date;
     try{
         // (1)接続
-        $db = new PDO('mysql:host=localhost;dbname=bath_data_base', 'root', 'Abc445566@');
+        $db = new PDO("mysql:host=$dbhost;dbname=$dbname", "$dbusername", "$dbpassword");
         // (2) SQLクエリ作成
         $time = date('Y-m-d');
-        $stmt = $db->prepare("SELECT * FROM member WHERE time LIKE '$time %';");
+        $stmt = $db->prepare("SELECT * FROM $dbtable WHERE time LIKE '$time %';");
         // (3) SQLクエリ実行
         $res = $stmt->execute();
         if($res) {
@@ -44,9 +51,9 @@
     date;
     try{
         // (1)接続
-        $db = new PDO('mysql:host=localhost;dbname=bath_data_base', 'root', 'Abc445566@');
+        $db = new PDO("mysql:host=$dbhost;dbname=$dbname", "$dbusername", "$dbpassword");
         // (2) SQLクエリ作成
-        $stmt = $db->prepare("SELECT * FROM member;");
+        $stmt = $db->prepare("SELECT * FROM $dbtable;");
         // (3) SQLクエリ実行
         $res = $stmt->execute();
         if($res) {
