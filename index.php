@@ -13,7 +13,7 @@
         // リダイレクト処理
         echo <<<date
             <br>
-            <a href="./update.php">index</a>
+            <a href="./update.php">update</a>
             date;
         // header('Location: ./update.php');
         // exit;
