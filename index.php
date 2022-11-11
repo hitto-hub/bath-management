@@ -1,6 +1,5 @@
 <?php
     session_start(); // セッションスタート
-    $session_len = strlen($_SESSION["data"]); // $_SESSION["data"] の文字数を$session_lenに代入
     if (empty($_SESSION["data"])) {
         // $_SESSION["data"]が空の時実行
         echo <<<date

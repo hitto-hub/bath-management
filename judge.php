@@ -6,7 +6,6 @@
         $_SESSION["data"] = $_POST["name"];
     }
     array_pop($_POST); // $_POSTを Array ( ) にする
-    $session_len = strlen($_SESSION["data"]); // $_SESSION["data"] の文字数を$session_lenに代入
     if (empty($_SESSION["data"])) {
         // $_SESSION["data"]が空の時実行
         // リダイレクト処理
