@@ -29,6 +29,29 @@
             </form>
             DATA;
         } else {
+            // データ挿入処理
+            try{
+                // (1)接続
+                $db = new PDO('mysql:host=localhost;dbname=bath_data_base', 'root', 'Abc445566@');
+                // (2) 挿入するデータを作成
+                $id = session_id();
+                $name = $_SESSION["data"];
+                $time = date('Y-m-d H:i:s');
+                // (2) SQLクエリ作成
+                $stmt = $db->prepare("INSERT INTO member VALUES(?,?,?);");
+                $stmt->bindParam(1, $id, PDO::PARAM_STR);
+                $stmt->bindParam(2, $name, PDO::PARAM_STR);
+                $stmt->bindParam(3, $time, PDO::PARAM_STR);
+                // (3) SQLクエリ実行
+                $res = $stmt->execute();
+                // 切断
+                $db = null;
+            } catch(PDOException $e){
+                echo "データベース接続失敗<br>";
+                echo $e->getMessage();
+            }
+
+            // リダイレクト処理
             echo <<<DATA
             <br>
             <a href=./check-in.php>./check-in.phpへ</a>
@@ -47,6 +70,8 @@
         echo "POST：";
         print_r($_POST);
         echo "<br>";
+
+        echo $time;
     ?>
     <br>
     <!-- ↓本番時消すかも -->

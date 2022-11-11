@@ -1,0 +1,43 @@
+// memo.txt内で設定したパスワードはデモで本番用は違うパスワードを設定する
+// usernameなども同様
+// 本番用のパスワードは別途pass.txtにある
+// 正直WANに公開していないので、パスワードを変える必要はないかもしれない...
+
+sudo apt update
+sudo apt upgrade
+sudo apt -y dist-upgrade
+
+// apacheインストール
+sudo apt install -y apache2
+
+// phpインストール
+sudo apt install -y php
+php -v
+
+// PHP 7.1 以降および MySQL/MariaDB 5.5 以降と互換性のある現在のバージョン。
+
+sudo apt install mysql-server
+sudo service mysql status
+sudo mysql
+mysql> CREATE USER 'admin'@'localhost' IDENTIFIED BY 'Hello!sq1';
+GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Abc445566@';
+FLUSH PRIVILEGES;
+
+sudo mysql_secure_installation
+Abc445566@
+y
+0
+n
+y
+.......
+// phpMyAdminに必要なパッケージをインストール
+// php-mysql というパッケージをインストールするしたあとApacheを再起動するとPHPでMySQLに接続できた。
+sudo apt install php-mysql
+systemctl restart apache2.service
+
+https://www.javadrive.jp/phpmyadmin/install/index1.html#section1
+https://sekisuiseien.com/computer/11564/
+https://arkgame.com/2022/05/04/post-307738/
+https://blog.denet.co.jp/how-to-fix-phpmyadmin-white-screen/

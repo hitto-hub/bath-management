@@ -1,0 +1,13 @@
+// テーブル作成
+CREATE TABLE member(
+    id      VARCHAR(128) PRIMARY KEY,
+    name    VARCHAR(128),
+    time   DATETIME
+);
+
+// データ挿入
+INSERT INTO member (id, name, time) VALUES (dsfadfggag4, 'hitto', 2022-11-10 22:34:15);
+INSERT INTO member (id, name, time) VALUES (a9udshgf78a4, 'hatto', 2022-11-10 22:34:15);
+
+
+
