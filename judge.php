@@ -1,8 +1,9 @@
 <?php
+    require_once 'function.php'; // functionファイル読み込み
     session_start(); // セッションスタート
     $post_len = strlen($_POST["name"]); // $_POST["name"] の文字数を$post_lenに代入
     if (0 < $post_len) {
-        echo '$_POST["name"]に何かあったので$_SESSION["data"]に代入しました<br>';
+        echo '$_SESSION["data"] = $_POST["name"]<br>';
         $_SESSION["data"] = $_POST["name"];
     }
     array_pop($_POST); // $_POSTを Array ( ) にする
@@ -50,15 +51,6 @@
         // exit;
     }
 
-    echo "<br>";
-    echo 'session id：' . session_id();
-    echo "<br>";
-    echo "SESSION：";
-    print_r($_SESSION);
-    echo "<br>";
-    echo "POST：";
-    print_r($_POST);
-    echo "<br>";
-
+    deb();
     echo $time;
 ?>

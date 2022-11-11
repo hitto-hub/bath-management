@@ -1,4 +1,5 @@
 <?php
+    require_once 'function.php'; // functionファイル読み込み
     session_start(); // セッションスタート
     if (empty($_SESSION["data"])) {
         // $_SESSION["data"]が空の時実行
@@ -17,13 +18,5 @@
         // header('Location: ./update.php');
         // exit;
     }
-    echo "<br>";
-    echo 'session id：' . session_id();
-    echo "<br>";
-    echo "SESSION：";
-    print_r($_SESSION);
-    echo "<br>";
-    echo "POST：";
-    print_r($_POST);
-    echo "<br>";
+    deb();
 ?>
