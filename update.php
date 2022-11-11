@@ -19,21 +19,21 @@
         // 切断
         $db = null;
         // リダイレクト処理
-        echo <<<date
-        <br>
-        <a href="./success.php">success</a>
-        date;
-        // header('Location: ./success.php');
-        // exit;
+        // echo <<<date
+        //     <br>
+        //     <a href="./success.php">success</a>
+        // date;
+        header('Location: ./success.php');
+        exit;
     } catch(PDOException $e){
         echo "データベース接続失敗<br>";
         echo $e->getMessage();
         // リダイレクト処理
-        echo <<<date
-        <br>
-        <a href="./reset.php">reset</a>
-        date;
-        // header('Location: ./reset.php');
-        // exit;
+        // echo <<<date
+        //     <br>
+        //     <a href="./reset.php">reset</a>
+        // date;
+        header('Location: ./reset.php');
+        exit;
     }
 ?>

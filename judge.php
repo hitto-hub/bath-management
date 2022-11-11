@@ -10,12 +10,12 @@
     if (empty($_SESSION["data"])) {
         // $_SESSION["data"]が空の時実行
         // リダイレクト処理
-        echo <<<date
-        <br>
-        <a href="./input.php">input</a>
-        date;
-        // header('Location: ./input.php');
-        // exit;
+        // echo <<<date
+        //     <br>
+        //     <a href="./input.php">input</a>
+        // date;
+        header('Location: ./input.php');
+        exit;
     } else {
         // データ挿入処理
         try{
@@ -43,12 +43,12 @@
             //                       $_SESSION["date"] に新しい名前が入っているのでupdate.phpに任せる
         }
         // リダイレクト処理
-        echo <<<date
-        <br>
-        <a href="./index.php">index</a>
-        date;
-        // header('Location: ./index.php');
-        // exit;
+        // echo <<<date
+        //     <br>
+        //     <a href="./index.php">index</a>
+        // date;
+        header('Location: ./index.php');
+        exit;
     }
 
     deb();
