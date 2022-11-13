@@ -1,6 +1,7 @@
 # bath-management
 
 ## conf.php
+
 ```php
 <?php
     function conf($parameter) {
