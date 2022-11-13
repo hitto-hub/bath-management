@@ -41,3 +41,23 @@ https://www.javadrive.jp/phpmyadmin/install/index1.html#section1
 https://sekisuiseien.com/computer/11564/
 https://arkgame.com/2022/05/04/post-307738/
 https://blog.denet.co.jp/how-to-fix-phpmyadmin-white-screen/
+https://qiita.com/na0AaooQ/items/810cce437c6d480701ab
+
+
+
+
+
+MySQLの設定ファイルに問題は無いか？
+「/etc/mysql/mysql.conf.d/mysqld.cnf」ファイルのbind-addressも確認しましょう。デフォルトでは「127.0.0.1」(ループバックアドレスなので同じホスト内のみ接続可能)となっているので、接続したいホストに応じてに変更する必要があります。例えば「0.0.0.0」に設定すれば全てのホストからの接続を許可できます。
+
+```
+$ sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf
+...
+#bind-address            = 127.0.0.1
+bind-address            = 0.0.0.0
+...
+```
+
+ERROR 2003 (HY000): Can't connect to MySQL server on '192.168.0.202:3306' (111)
+ ↓
+ERROR 1045 (28000): Access denied for user 'root'@'192.168.0.203' (using password: YES)
