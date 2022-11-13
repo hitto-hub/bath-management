@@ -61,3 +61,4 @@ bind-address            = 0.0.0.0
 ERROR 2003 (HY000): Can't connect to MySQL server on '192.168.0.202:3306' (111)
  ↓
 ERROR 1045 (28000): Access denied for user 'root'@'192.168.0.203' (using password: YES)
+エラー内容が変わった！！一歩前進か？
