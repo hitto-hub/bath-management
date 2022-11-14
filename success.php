@@ -36,6 +36,10 @@
         echo "データベース接続失敗<br>";
         echo $e->getMessage();
     }
+    if ($loop == "") {
+        header('Location: ./reset.php');
+        exit;
+    }
     echo <<<date
     <a href="./show.php">show</a>
     date;
