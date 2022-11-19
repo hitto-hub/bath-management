@@ -40,7 +40,5 @@
         header('Location: ./reset.php');
         exit;
     }
-    echo <<<date
-    <a href="./show.php">show</a>
-    date;
+    require_once 'show.php'; // showファイル読み込み
 ?>
