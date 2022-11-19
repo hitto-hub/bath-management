@@ -7,6 +7,7 @@
     $dbpassword = conf("dbpassword");
     $dbtable = conf("dbtable");
     echo <<<date
+    <h2>記録されたデータ</h2>
     <p>今日入った人</p>
     date;
     try{
