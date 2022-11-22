@@ -1,0 +1,24 @@
+ul.border-ul li:first-child {
+    border-top:2px solid #666;
+    border-bottom:2px solid #666;
+}
+
+ul.border-ul li + li {
+    border-bottom:2px solid #666;
+}
+
+ul.ul-left {
+    padding : 0;
+}
+
+li.point{
+    list-style: none;
+}
+
+a.no-underline{
+    text-decoration:none;
+}
+
+p.no-margin{
+    margin-bottom: 0;
+}
