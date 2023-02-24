@@ -63,3 +63,8 @@ ERROR 2003 (HY000): Can't connect to MySQL server on '192.168.0.202:3306' (111)
 ERROR 1045 (28000): Access denied for user 'root'@'192.168.0.203' (using password: YES)
 エラー内容が変わった！！一歩前進か？
 なぜかつながった！！
+
+drwxr-xr-x 2 root root 4096 Jan  8 15:57 .
+drwxr-xr-x 4 root root 4096 Jan  8 15:57 ..
+-rw-r--r-- 1 root root  132 Mar 11  2021 mysql.cnf
+-rw-r--r-- 1 root root 2220 Mar 11  2021 mysqld.cnf
