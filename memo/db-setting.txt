@@ -6,8 +6,8 @@ CREATE TABLE member(
 );
 
 // データ挿入
-INSERT INTO `member` (`id`, `name`, `time`) VALUES ('hattohatto11', 'hatto', '2022-11-10 16:06:56 ');
-INSERT INTO `member` (`id`, `name`, `time`) VALUES ('hittohitto22', 'hitto', '2022-11-9 20:32:43 ');
-INSERT INTO `member` (`id`, `name`, `time`) VALUES ('huttohutto33', 'hutto', '2022-11-9 21:33:43 ');
-INSERT INTO `member` (`id`, `name`, `time`) VALUES ('hettohetto44', 'hetto', '2022-11-9 21:33:51 ');
-INSERT INTO `member` (`id`, `name`, `time`) VALUES ('hottohotto55', 'hotto', '2022-01-2 01:56:34 ');
+INSERT INTO `member` (`id`, `name`, `time`) VALUES ('hattohatto11', 'hatto', '2022-11-10 16:06:56');
+INSERT INTO `member` (`id`, `name`, `time`) VALUES ('hittohitto22', 'hitto', '2022-11-9 20:32:43');
+INSERT INTO `member` (`id`, `name`, `time`) VALUES ('huttohutto33', 'hutto', '2022-11-9 21:33:43');
+INSERT INTO `member` (`id`, `name`, `time`) VALUES ('hettohetto44', 'hetto', '2022-11-9 21:33:51');
+INSERT INTO `member` (`id`, `name`, `time`) VALUES ('hottohotto55', 'hotto', '2022-01-2 01:56:34');
